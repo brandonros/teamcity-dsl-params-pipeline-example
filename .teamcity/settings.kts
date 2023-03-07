@@ -45,64 +45,52 @@ dotnet build
         }
 
         script {
-            name = "003-dotnet unit test"
+            name = "003-dotnet test"
             scriptContent = """
-echo "TODO"
+cd src/
+dotnet test
 """.trimIndent()
         }
 
         script {
-            name = "004-remove read-only attribute from web.config prior to dotnet publish"
+            name = "004-dotnet publish"
             scriptContent = """
-echo "TODO"
-""".trimIndent()
-        }
-
-        script {
-            name = "005-dotnet publish"
-            scriptContent = """
+cd src/
 dotnet publish
-echo "TODO: push to artifactory"
+echo "TODO: push to artifactory?"
 """.trimIndent()
         }
 
         script {
-            name = "006-resharper inspections"
+            name = "005-resharper inspections"
             scriptContent = """
 echo "TODO"
 """.trimIndent()
         }
 
         script {
-            name = "007-run tests"
+            name = "006-fortify scan"
             scriptContent = """
 echo "TODO"
 """.trimIndent()
         }
 
         script {
-            name = "008-fortify scan"
+            name = "007-octo pack"
             scriptContent = """
 echo "TODO"
 """.trimIndent()
         }
 
         script {
-            name = "009-octo pack"
+            name = "008-octopus create release and deploy"
             scriptContent = """
 echo "TODO"
 """.trimIndent()
         }
 
         script {
-            name = "010-octopus create release and deploy"
-            scriptContent = """
-echo "TODO"
-""".trimIndent()
-        }
-
-        script {
-            name = "011-sonarqube scan"
+            name = "009-sonarqube scan"
             scriptContent = """
 echo "TODO"
 """.trimIndent()
