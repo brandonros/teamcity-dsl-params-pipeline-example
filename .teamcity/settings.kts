@@ -31,14 +31,14 @@ object Build : BuildType({
         script {
             name = "001-dotnet clean"
             scriptContent = """
-echo "Hello, world!"
+dotnet clean
 """.trimIndent()
         }
 
         script {
             name = "002-dotnet build"
             scriptContent = """
-echo "Hello, world!"
+dotnet clean
 """.trimIndent()
         }
 
