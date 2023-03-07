@@ -31,6 +31,7 @@ object Build : BuildType({
         script {
             name = "001-dotnet clean"
             scriptContent = """
+cd src/
 dotnet clean
 """.trimIndent()
         }
@@ -38,70 +39,72 @@ dotnet clean
         script {
             name = "002-dotnet build"
             scriptContent = """
-dotnet clean
+cd src/
+dotnet build
 """.trimIndent()
         }
 
         script {
             name = "003-dotnet unit test"
             scriptContent = """
-echo "Hello, world!"
+echo "TODO"
 """.trimIndent()
         }
 
         script {
             name = "004-remove read-only attribute from web.config prior to dotnet publish"
             scriptContent = """
-echo "Hello, world!"
+echo "TODO"
 """.trimIndent()
         }
 
         script {
-            name = "005-dotnet publish (to artifactory)"
+            name = "005-dotnet publish"
             scriptContent = """
-echo "Hello, world!"
+dotnet publish
+echo "TODO: push to artifactory"
 """.trimIndent()
         }
 
         script {
             name = "006-resharper inspections"
             scriptContent = """
-echo "Hello, world!"
+echo "TODO"
 """.trimIndent()
         }
 
         script {
             name = "007-run tests"
             scriptContent = """
-echo "Hello, world!"
+echo "TODO"
 """.trimIndent()
         }
 
         script {
             name = "008-fortify scan"
             scriptContent = """
-echo "Hello, world!"
+echo "TODO"
 """.trimIndent()
         }
 
         script {
             name = "009-octo pack"
             scriptContent = """
-echo "Hello, world!"
+echo "TODO"
 """.trimIndent()
         }
 
         script {
             name = "010-octopus create release and deploy"
             scriptContent = """
-echo "Hello, world!"
+echo "TODO"
 """.trimIndent()
         }
 
         script {
             name = "011-sonarqube scan"
             scriptContent = """
-echo "Hello, world!"
+echo "TODO"
 """.trimIndent()
         }
     }
