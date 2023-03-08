@@ -11,7 +11,7 @@ project {
     params {
         param("teamcity.ui.settings.readOnly", "true")
     }
-    
+
     val Sources = GitVcsRoot({
         name = "Sources"
         url = DslContext.getParameter("repoUrl")
@@ -26,7 +26,7 @@ project {
 
         steps {
             script {
-                name = "001-dotnet clean"
+                name = "001-dotnet clean test"
                 scriptContent = """
     cd src/
     dotnet clean
