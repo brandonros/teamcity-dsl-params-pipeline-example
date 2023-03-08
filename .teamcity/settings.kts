@@ -13,7 +13,7 @@ class CustomVcsRoot : GitVcsRoot() {
     }
 }
 
-class CustomPipeline(vcsRoot: CustomVcsRoot): BuildType() {
+class CustomPipeline(vcsRoot: GitVcsRoot): BuildType() {
     init {
         id("CustomPipeline")
         name = "CustomPipeline"
