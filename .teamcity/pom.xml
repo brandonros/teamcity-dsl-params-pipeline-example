@@ -110,8 +110,8 @@
     <dependency>
       <groupId>com.brandonros.test</groupId>
       <artifactId>TeamCityDslLibExample</artifactId>
-      <version>1.0-SNAPSHOT</version>
-      <scope>compile</scope>
+      <version>1.0-20230308.204631-1</version>
+      <type>pom</type>
     </dependency>
   </dependencies>
 </project>
