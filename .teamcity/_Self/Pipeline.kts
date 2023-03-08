@@ -1,5 +1,6 @@
 package _Self
 
+import _Self.VcsRoot
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
 import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
@@ -9,7 +10,7 @@ object Pipeline : BuildType({
     name = "Build"
 
     vcs {
-        root(_Self.VcsRoot)
+        root(VcsRoot)
     }
 
     steps {
