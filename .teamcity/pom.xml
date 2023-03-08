@@ -82,6 +82,13 @@
   </build>
 
   <dependencies>
+    <!-- move common pipeline logic into external dependency to DRY it out -->
+    <dependency>
+      <groupId>com.brandonros.test</groupId>
+      <artifactId>TeamCityDslLibExample</artifactId>
+      <version>1.0-20230308.204631-1</version>
+      <scope>compile</scope>
+    </dependency>
     <dependency>
       <groupId>org.jetbrains.teamcity</groupId>
       <artifactId>configs-dsl-kotlin</artifactId>
@@ -106,12 +113,6 @@
       <artifactId>kotlin-script-runtime</artifactId>
       <version>${kotlin.version}</version>
       <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.brandonros.test</groupId>
-      <artifactId>TeamCityDslLibExample</artifactId>
-      <version>1.0-20230308.204631-1</version>
-      <type>pom</type>
     </dependency>
   </dependencies>
 </project>
