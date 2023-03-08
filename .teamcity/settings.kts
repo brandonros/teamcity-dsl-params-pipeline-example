@@ -21,7 +21,7 @@ project {
         name = "Pipeline"
 
         vcs {
-            root(sources)
+            root(Sources)
         }
 
         steps {
