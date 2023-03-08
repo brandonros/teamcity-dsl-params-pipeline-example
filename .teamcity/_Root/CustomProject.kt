@@ -8,7 +8,6 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.GitVcsRoot
 
 object CustomProject : Project({
-    name = "CustomProject"
     vcsRoot(Sources)
     buildType(Pipeline)
     sequential {
