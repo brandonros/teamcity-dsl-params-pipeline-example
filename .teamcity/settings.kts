@@ -5,23 +5,20 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.GitVcsRoot
 
-version = "2019.2"
-
-project {
-    params {
-        param("teamcity.ui.settings.readOnly", "true")
-    }
-
-    val Sources = GitVcsRoot({
+fun createSources(): Sources {
+    val sources = GitVcsRoot({
         name = "Sources"
         url = DslContext.getParameter("repoUrl")
     })
+    return sources
+}
 
-    val Pipeline = BuildType({
+fun createPipeline(sources: GitVcsRoot): BuildType {
+    val pipeline = BuildType({
         name = "Pipeline"
 
         vcs {
-            root(Sources)
+            root(sources)
         }
 
         steps {
@@ -94,10 +91,22 @@ project {
             }
         }
     })
+    return pipeline
+}
 
-    vcsRoot(Sources)
-    buildType(Pipeline)
+version = "2019.2"
+
+project {
+    params {
+        param("teamcity.ui.settings.readOnly", "true")
+    }
+
+    val sources = createSources()
+    val pipeline = createPipeline(sources)
+
+    vcsRoot(sources)
+    buildType(pipeline)
     sequential {
-        buildType(Pipeline)
+        buildType(pipeline)
     }
 }
