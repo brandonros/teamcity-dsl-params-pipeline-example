@@ -1,3 +1,3 @@
-[![official JetBrains project](https://jb.gg/badges/official-flat-square.svg)](https://github.com/jetbrains#jetbrains-on-github)
+Example .NET project with `.teamcity/settings.kts` Kotlin DSL pipeline
 
-Example of parameterised TeamCity DSL definition of a simple build chain
+Uses https://github.com/brandonros/teamcity-dsl-lib-example as `pom.xml` dependency
