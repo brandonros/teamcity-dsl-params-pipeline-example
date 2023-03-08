@@ -5,7 +5,7 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.GitVcsRoot
 
-fun createSources(): Sources {
+fun createSources(): GitVcsRoot {
     val sources = GitVcsRoot({
         name = "Sources"
         url = DslContext.getParameter("repoUrl")
