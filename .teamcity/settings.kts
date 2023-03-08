@@ -6,15 +6,14 @@ import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.v2019_2.vcs.GitVcsRoot
 
 fun createSources(): GitVcsRoot {
-    val sources = GitVcsRoot({
+    return object : GitVcsRoot({
         name = "Sources"
         url = DslContext.getParameter("repoUrl")
     })
-    return sources
 }
 
-fun createPipeline(sources: GitVcsRoot): BuildType {
-    val pipeline = BuildType({
+fun createPipeline(sources: GitVcsRoot) BuildType {
+    return object : BuildType({
         name = "Pipeline"
 
         vcs {
@@ -91,7 +90,6 @@ fun createPipeline(sources: GitVcsRoot): BuildType {
             }
         }
     })
-    return pipeline
 }
 
 version = "2019.2"
