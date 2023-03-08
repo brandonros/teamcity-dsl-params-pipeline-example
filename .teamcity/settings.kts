@@ -99,8 +99,8 @@ project {
         param("teamcity.ui.settings.readOnly", "true")
     }
 
-    let vcsRoot = CustomVcsRoot()
-    let pipeline = CustomPipeline(vcsRoot)
+    val vcsRoot = CustomVcsRoot()
+    val pipeline = CustomPipeline(vcsRoot)
 
     vcsRoot(vcsRoot)
     buildType(pipeline)
